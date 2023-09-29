@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 
 import jwt, { JwtPayload } from "jsonwebtoken";
-import Usuario, { IUser } from "../models/usuario";
+import Usuario, { IUser } from "../models/user";
 
 const validarJWT = async (req: Request, res: Response, next: NextFunction) => {
   const token = req.headers["x-token"] as string;
@@ -14,7 +14,7 @@ const validarJWT = async (req: Request, res: Response, next: NextFunction) => {
   }
 
   try {
-    const claveSecreta = process.env.CLAVESECRETA as string;
+    const claveSecreta = process.env.SECRETKEY as string;
     const payload = jwt.verify(token, claveSecreta) as JwtPayload;
 
     const { id } = payload;

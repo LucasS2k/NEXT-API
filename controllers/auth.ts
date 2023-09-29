@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Usuario, { IUser } from "../models/usuario";
+import Usuario, { IUser } from "../models/user";
 import bcryptjs from "bcryptjs";
 import { ROLES } from "../helpers/constants";
 import randomstring from "randomstring";

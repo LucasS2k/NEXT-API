@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { register, login, verifyUser } from "../controllers/auth";
 import { check } from "express-validator";
-import { recolectarErrores } from "../middlewares/recolectarErrores";
+import { recolectarErrores } from "../middlewares/errorCollector";
 import { existeEmail } from "../helpers/validacionesDB";
 const router = Router();
 
