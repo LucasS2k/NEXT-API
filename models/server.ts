@@ -1,0 +1,34 @@
+import express, { Express } from "express";
+import cors from "cors";
+import authRoutes from "../routes/auth";
+import { dbConnect } from "../database/config";
+export class Server {
+  app: Express;
+  port: string | number | undefined;
+  authPath: string;
+  constructor() {
+    this.app = express();
+    this.port = 8080;
+    this.authPath = "/auth";
+
+    this.connectToDB();
+    this.middlewares();
+    this.routes();
+  }
+
+  async connectToDB(): Promise<void> {
+    await dbConnect();
+  }
+  middlewares(): void {
+    this.app.use(express.json());
+    this.app.use(cors());
+  }
+  routes(): void {
+    this.app.use(this.authPath, authRoutes);
+  }
+  listen(): void {
+    this.app.listen(this.port, () => {
+      console.log(`Running on port ${this.port}`);
+    });
+  }
+}
