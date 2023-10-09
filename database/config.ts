@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 
 export const dbConnect = async (): Promise<void> => {
   try {
-    const dbURL =
-      "mongodb+srv://lucasnahuel2000silva:A7TuVXpeTLrAbrta@cluster0.ipihgbn.mongodb.net/";
+    const dbURL = process.env.DB_URL;
     if (!dbURL) {
       throw new Error("URL no especificada en variables de entorno");
     }

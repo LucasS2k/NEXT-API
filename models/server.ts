@@ -9,7 +9,7 @@ export class Server {
   authPath: string;
   constructor() {
     this.app = express();
-    this.port = 8080;
+    this.port = process.env.PORT;
     this.authPath = "/auth";
 
     this.connectToDB();
