@@ -2,13 +2,14 @@ import express, { Express } from "express";
 import cors from "cors";
 import authRoutes from "../routes/auth";
 import { dbConnect } from "../database/config";
+import bodyParser from "body-parser";
 export class Server {
   app: Express;
   port: string | number | undefined;
   authPath: string;
   constructor() {
     this.app = express();
-    this.port = process.env.PORT;
+    this.port = 8080;
     this.authPath = "/auth";
 
     this.connectToDB();

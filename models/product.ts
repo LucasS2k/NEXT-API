@@ -2,37 +2,38 @@ import { Model, Schema, Types, model } from "mongoose";
 
 export interface IProduct {
   id: Number;
-  title: String;
+  nombre: String;
+  precio: Number;
+  productImage: String;
   category: String;
-  image: String;
-  price: Number;
-  quantity: Number;
+
+  cantidad: Number;
 }
 const ProductSchema = new Schema<IProduct>({
   id: {
     type: Number,
     required: [true, "Id is required"],
   },
-  title: {
+  nombre: {
     type: String,
-    required: [true, "Title is required"],
+    required: [true, "Nombre is required"],
+  },
+  precio: {
+    type: Number,
+    required: [true, "precio is required"],
+  },
+  productImage: {
+    type: String,
+    required: [true, "productImage is required"],
   },
   category: {
     type: String,
     required: [true, "Category is required"],
   },
-  image: {
-    type: String,
-    required: [true, "Image is required"],
-  },
 
-  price: {
+  cantidad: {
     type: Number,
-    required: [true, "Price is required"],
-  },
-  quantity: {
-    type: Number,
-    required: [true, "Quantity is required"],
+    required: [true, "cantidad is required"],
   },
 });
 
