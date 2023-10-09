@@ -5,8 +5,8 @@ export const getProducts = async (req: Request, res: Response) => {
     const products = await Product.find();
     res.status(200).json({ products });
   } catch (error) {
-    console.error("Error fetching products:", error);
-    res.status(500).json({ error: "Internal server error" });
+    console.error("Error al obtener los productos", error);
+    res.status(500).json({ error: "Error en servidor" });
   }
 };
 
@@ -26,9 +26,9 @@ export const createProduct = async (req: Request, res: Response) => {
 
     res
       .status(201)
-      .json({ message: "Product created successfully", product: newProduct });
+      .json({ message: "Producto creado con exito", product: newProduct });
   } catch (error) {
-    console.error("Error creating product:", error);
-    res.status(500).json({ error: "Internal server error" });
+    console.error("Error al crear producto:", error);
+    res.status(500).json({ error: "Error en servidor" });
   }
 };

@@ -26,7 +26,7 @@ export class Server {
   }
   routes(): void {
     this.app.use(this.authPath, authRoutes);
-    this.app.use("/api", productsRouter);
+    this.app.use("/products", productsRouter);
   }
   listen(): void {
     this.app.listen(this.port, () => {
