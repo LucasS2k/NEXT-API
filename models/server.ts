@@ -2,7 +2,7 @@ import express, { Express } from "express";
 import cors from "cors";
 import authRoutes from "../routes/auth";
 import { dbConnect } from "../database/config";
-import bodyParser from "body-parser";
+import productsRouter from "../routes/products";
 export class Server {
   app: Express;
   port: string | number | undefined;
@@ -26,6 +26,7 @@ export class Server {
   }
   routes(): void {
     this.app.use(this.authPath, authRoutes);
+    this.app.use("/api", productsRouter);
   }
   listen(): void {
     this.app.listen(this.port, () => {
