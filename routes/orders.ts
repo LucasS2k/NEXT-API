@@ -5,12 +5,12 @@ import { recolectarErrores } from "../middlewares/errorCollector";
 import { isVerified } from "../middlewares/verifiedValidate";
 import { check } from "express-validator";
 
-const router = Router();
+const orderRouter = Router();
 
-router.get("/", [validarJWT, recolectarErrores], getOrders);
+orderRouter.get("/all", [validarJWT, recolectarErrores], getOrders);
 
-router.post(
-  "/",
+orderRouter.post(
+  "/create",
   [
     validarJWT,
     isVerified,
@@ -26,4 +26,4 @@ router.post(
   createOrder
 );
 
-export default router;
+export default orderRouter;

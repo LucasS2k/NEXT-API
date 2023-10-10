@@ -3,6 +3,7 @@ import cors from "cors";
 import authRoutes from "../routes/auth";
 import { dbConnect } from "../database/config";
 import productsRouter from "../routes/products";
+import orderRouter from "../routes/orders";
 export class Server {
   app: Express;
   port: string | number | undefined;
@@ -27,6 +28,7 @@ export class Server {
   routes(): void {
     this.app.use(this.authPath, authRoutes);
     this.app.use("/products", productsRouter);
+    this.app.use("/orders", orderRouter);
   }
   listen(): void {
     this.app.listen(this.port, () => {
