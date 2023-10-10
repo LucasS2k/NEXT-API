@@ -26,7 +26,7 @@ export class Server {
     this.app.use(cors());
     this.app.use(
       cors({
-        origin: "https://next-clthng.vercel.app/",
+        origin: "https://next-clthng.vercel.app",
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true,
         optionsSuccessStatus: 204,
