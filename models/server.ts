@@ -23,7 +23,6 @@ export class Server {
   }
   middlewares(): void {
     this.app.use(express.json());
-    this.app.use(cors());
     this.app.use(
       cors({
         origin: "https://next-clthng.vercel.app",
