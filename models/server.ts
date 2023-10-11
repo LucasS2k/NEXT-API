@@ -23,14 +23,7 @@ export class Server {
   }
   middlewares(): void {
     this.app.use(express.json());
-    this.app.use(
-      cors({
-        origin: "https://next-clthng.vercel.app",
-        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-        credentials: true,
-        optionsSuccessStatus: 204,
-      })
-    );
+    this.app.use(cors());
   }
   routes(): void {
     this.app.use(this.authPath, authRoutes);
