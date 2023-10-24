@@ -12,12 +12,10 @@ export class Server {
     this.app = express();
     this.port = process.env.PORT;
     this.authPath = "/auth";
-
     this.connectToDB();
     this.middlewares();
     this.routes();
   }
-
   async connectToDB(): Promise<void> {
     await dbConnect();
   }
@@ -30,6 +28,7 @@ export class Server {
     this.app.use("/products", productsRouter);
     this.app.use("/orders", orderRouter);
   }
+
   listen(): void {
     this.app.listen(this.port, () => {
       console.log(`🚀 Server running on port ${this.port} 🚀`);
