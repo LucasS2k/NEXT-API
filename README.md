@@ -15,6 +15,7 @@ Endpoint: POST /login
 
 {email (string): User's email
 password (string): User's password}
+
 Responses:
 Status 202: Login successful
 Status 404: User not found
@@ -28,6 +29,7 @@ Endpoint: PATCH /verify
 
 email (string): User's email
 code (string): Verification code
+
 Responses:
 Status 200: Verification successful
 Status 400: User already verified
@@ -42,6 +44,7 @@ Endpoint: GET /orders/all
 
 Request Headers:
 Authentication token (JWT) is required for authorization.
+
 Responses:
 Status 200: Successful retrieval
 
@@ -58,6 +61,7 @@ shippingCost (number): Shipping cost
 total (number): Total price
 shippingDetails (string): Shipping details
 items (array): Array of product items}
+
 Responses:
 Status 201: Order creation successful
 JSON Response: Created order object
