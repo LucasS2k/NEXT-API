@@ -1,5 +1,5 @@
 # NEXT-API Documentation:
-//////////////////////////////////////////////////////////
+
 # User Registration:
 
 Endpoint: POST /register
@@ -8,7 +8,7 @@ Endpoint: POST /register
 email (string): User's email
 password (string): User's password
 rol (string, optional): User's role}
-//////////////////////////////////////////////////////////
+
 # User Login:
 
 Endpoint: POST /login
@@ -20,7 +20,7 @@ Status 202: Login successful
 Status 404: User not found
 Status 401: Incorrect password
 Status 500: Server error
-//////////////////////////////////////////////////////////
+
 
 # User Email Verification:
 
@@ -34,7 +34,7 @@ Status 400: User already verified
 Status 401: Incorrect verification code
 Status 404: User not found
 Status 500: Server error
-//////////////////////////////////////////////////////////
+
 
 # Get All Orders:
 
@@ -44,7 +44,7 @@ Request Headers:
 Authentication token (JWT) is required for authorization.
 Responses:
 Status 200: Successful retrieval
-//////////////////////////////////////////////////////////
+
 
 # Create Order:
 
@@ -63,7 +63,7 @@ Status 201: Order creation successful
 JSON Response: Created order object
 Status 400: Validation errors
 Status 500: Server error
-//////////////////////////////////////////////////////////
+
 
 # Create Product:
 
@@ -80,7 +80,7 @@ Responses:
 Status 201: Product creation successful
 JSON Response: Created product object
 Status 500: Server error
-//////////////////////////////////////////////////////////
+
 
 # Get All Products:
 
@@ -90,7 +90,7 @@ Responses:
 Status 200: Successful retrieval
 JSON Response: List of products
 Status 500: Server error
-//////////////////////////////////////////////////////////
+
 
 
 
