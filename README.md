@@ -1,6 +1,6 @@
 # NEXT-API Documentation:
 //////////////////////////////////////////////////////////
-#User Registration:
+# User Registration:
 
 Endpoint: POST /register
 
@@ -9,7 +9,7 @@ email (string): User's email
 password (string): User's password
 rol (string, optional): User's role}
 //////////////////////////////////////////////////////////
-#User Login:
+# User Login:
 
 Endpoint: POST /login
 
@@ -22,7 +22,7 @@ Status 401: Incorrect password
 Status 500: Server error
 //////////////////////////////////////////////////////////
 
-#User Email Verification:
+# User Email Verification:
 
 Endpoint: PATCH /verify
 
@@ -36,7 +36,7 @@ Status 404: User not found
 Status 500: Server error
 //////////////////////////////////////////////////////////
 
-#Get All Orders:
+# Get All Orders:
 
 Endpoint: GET /orders/all
 
@@ -46,7 +46,7 @@ Responses:
 Status 200: Successful retrieval
 //////////////////////////////////////////////////////////
 
-#Create Order:
+# Create Order:
 
 Endpoint: POST /create
 
