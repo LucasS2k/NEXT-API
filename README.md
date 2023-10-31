@@ -4,17 +4,17 @@
 
 Endpoint: POST /register
 
-{nombre (string): User's name
-email (string): User's email
-password (string): User's password
-rol (string, optional): User's role}
+nombre (string): Users name
+email (string): Users email
+password (string): Users password
+rol (string, optional): Users role
 
 # User Login:
 
 Endpoint: POST /login
 
-{email (string): User's email
-password (string): User's password}
+email (string): User's email
+password (string): User's password
 
 Responses:
 Status 202: Login successful
@@ -55,12 +55,12 @@ Endpoint: POST /create
 
 Request Headers:
 Authentication token (JWT) is required for authorization.
-{
+
 price (number): Order price
 shippingCost (number): Shipping cost
 total (number): Total price
 shippingDetails (string): Shipping details
-items (array): Array of product items}
+items (array): Array of product items
 
 Responses:
 Status 201: Order creation successful
@@ -73,12 +73,12 @@ Status 500: Server error
 
 Endpoint: POST /products/create
 
-{id (number): Product ID
+id (number): Product ID
 nombre (string): Product name
 precio (number): Product price
 productImage (string): Product image
 category (string): Product category
-cantidad (number): Product quantity}
+cantidad (number): Product quantity
 
 Responses:
 Status 201: Product creation successful
